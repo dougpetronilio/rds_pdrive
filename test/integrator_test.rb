@@ -4,7 +4,7 @@ require 'rds_pdrive'
 module RdsPdrive
   class IntegratorTest < Test::Unit::TestCase
     def setup
-        @integrator = Integrator.new("dougpetronilio@gmail.com", "counter567")
+        @integrator = Integrator.new("dougpetronilio@gmail.com", "testeapirdspipedrive")
     end
     
     def test_authorization
