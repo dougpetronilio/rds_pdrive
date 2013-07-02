@@ -24,7 +24,7 @@ Or install it yourself as:
 
 For Authenticated in account is passed the email and password in the construtor of the class Integrator as in the example:
 
-	integrator = Integrator('emailteste@gmail.com', 'pass123pass')
+	integrator = Integrator.new('emailteste@gmail.com', 'pass123pass')
 
 For list all persons of the authenticated account use the function get_all_leads of the class Integrator as in the example:
 
