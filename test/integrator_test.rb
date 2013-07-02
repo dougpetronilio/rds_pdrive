@@ -12,8 +12,8 @@ module RdsPdrive
     end
     
     def test_get_all_leads
-      @integrator.get_all_leads
-      assert_equal "Teste1", @integrator.leads[0].name
+      
+      assert_equal "Teste1", @integrator.get_all_leads[0].name
     end
     
     def test_add_new_lead

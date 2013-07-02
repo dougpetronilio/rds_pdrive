@@ -22,6 +22,7 @@ module RdsPdrive
         lead = Lead.new(d['name'], "", d['email'][0]['value'], "", d['phone'][0]['value'])
         @leads << lead
       end
+      @leads
     end
     
     def add_lead(lead)
