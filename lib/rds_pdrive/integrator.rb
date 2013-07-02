@@ -14,10 +14,12 @@ module RdsPdrive
     end
     
     def get_all_leads
+
       uri = URI.parse("#{@url}persons?api_token=#{@token}")
       response = Net::HTTP.get(uri)
       objeto_json = JSON.parse(response)
       data = objeto_json['data']
+      @leads = []
       data.each do |d|
         lead = Lead.new(d['name'], "", d['email'][0]['value'], "", d['phone'][0]['value'])
         @leads << lead
