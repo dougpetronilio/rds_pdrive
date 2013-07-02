@@ -45,9 +45,11 @@ module RdsPdrive
       uri = URI.parse(@url+"authorizations")
       response = Net::HTTP.post_form(uri, {"email" => @email, "password" => @password})
       objeto_json = JSON.parse(response.body)
-      @token = objeto_json['data'][0]['api_token']
-      @user_id = objeto_json['data'][0]['user_id']
-      @company_id = objeto_json['data'][0]['company_id']
+      if objeto_json['success'] == true
+        @token = objeto_json['data'][0]['api_token']
+        @user_id = objeto_json['data'][0]['user_id']
+        @company_id = objeto_json['data'][0]['company_id']
+      end
     end
   end
 end
