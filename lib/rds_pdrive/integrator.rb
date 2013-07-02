@@ -20,9 +20,11 @@ module RdsPdrive
       objeto_json = JSON.parse(response)
       data = objeto_json['data']
       @leads = []
-      data.each do |d|
-        lead = Lead.new(d['name'], "", d['email'][0]['value'], "", d['phone'][0]['value'])
-        @leads << lead
+      if data
+        data.each do |d|
+          lead = Lead.new(d['name'], "", d['email'][0]['value'], "", d['phone'][0]['value'])
+          @leads << lead
+        end
       end
       @leads
     end
